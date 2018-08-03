@@ -45,6 +45,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	
 
 	<build>
 		<finalName>config-service</finalName>
