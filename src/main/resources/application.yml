@@ -9,6 +9,29 @@ spring:
           uri: git@github.com:carolynrehm/assignforce-config-server.git
   application:
     name: config-service
+  
+  rabbitmq:
+    publisher-confirms: true
+    listener:
+      simple:
+        acknowledge-mode: manual
+    
+    exchange: assignforce
+    
+    location-routing-delete: assignforce.location.delete
+    trainer-routing-delete: assignforce.trainer.delete
+    trainer-routing-update: assignforce.trainer.update
+    curriculum-routing-delete: assignforce.curriculum.delete
+    skills-routing-delete: assignforce.skills.delete
+    
+    location-queue: location-queue
+    trainer-queue: trainer-queue
+    curriculum-queue: curriculum-queue
+    skills-queue: skills-queue
+    focus-queue: focus-queue
+    batch-queue: batch-queue
+    
+  
 
 info:
   component: config Server
@@ -18,3 +41,4 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka 
+      
