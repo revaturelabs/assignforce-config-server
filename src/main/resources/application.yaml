@@ -3,7 +3,6 @@ spring:
     config:
       server:
         git:
-          uri: ${CONFIG_REPO_URL}
-          cloneOnStart: true
-          username: ${CONFIG_GIT_USERNAME}
-          password: ${CONFIG_GIT_PASSWORD}
+          uri: ${CONFIG_REPO_URL:http://localhost:888}
+          username: ${CONFIG_GIT_USERNAME:test}
+          password: ${CONFIG_GIT_PASSWORD:password}
