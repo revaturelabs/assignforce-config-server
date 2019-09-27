@@ -6,10 +6,5 @@ spring:
           uri: ${CONFIG_REPO_URL:http://localhost:888}
           username: ${CONFIG_GIT_USERNAME:test}
           password: ${CONFIG_GIT_PASSWORD:password}
-
----
-spring:
-  profiles:
-    active: prod
 server:
-  port: 80
+  port: 8888
