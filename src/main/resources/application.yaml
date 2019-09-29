@@ -6,6 +6,5 @@ spring:
           uri: ${CONFIG_REPO_URL:http://localhost:8888}
           username: ${CONFIG_GIT_USERNAME:test}
           password: ${CONFIG_GIT_PASSWORD:password}
-          default-label: master
 server:
   port: 8888
