@@ -1,16 +1,36 @@
 spring:
+  profiles:
+    active: prod
   cloud:
     config:
       server:
         git:
-          uri: ${CONFIG_REPO_URL:http://localhost:8888}
-          username: ${CONFIG_GIT_USERNAME:test}
-          password: ${CONFIG_GIT_PASSWORD:password}
+          uri: ${CONFIG_REPO_URL}
+          username: ${CONFIG_GIT_USERNAME}
+          password: ${CONFIG_GIT_PASSWORD}
 server:
   port: 8888
   servlet:
-    context-path: /
+    context-path: /assignforce-config-service-prod
 logging:
   level:
     org:
       springframework: DEBUG
+
+---
+spring:
+  profiles:
+    active: default
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://localhost:8888
+  server:
+    port: 8888
+    servlet:
+      context-path: /
+  logging:
+    level:
+      org:
+        springframework: DEBUG
