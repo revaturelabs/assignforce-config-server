@@ -8,3 +8,5 @@ spring:
           password: ${CONFIG_GIT_PASSWORD:password}
 server:
   port: 8888
+  servlet:
+    context-path: /
