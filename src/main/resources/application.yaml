@@ -21,7 +21,3 @@ server:
   port: 8888
   servlet:
     context-path: /assignforce-config-service-prod
-logging:
-  level:
-    org:
-      springframework: DEBUG
